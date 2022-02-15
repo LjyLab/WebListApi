@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ljy.demo.dao.UserDao">
+<mapper namespace="com.ljy.demo.dao.UserMapper">
   <!-- 查找所有用户 -->
     <select id="listAll" resultType="User">
       select * from user
@@ -48,9 +48,11 @@
 
 
   <select id="getUserByList" resultMap="UserByList">
-    select u.id,u.account,u.password,u.name,u.info,
-           d.id deptid,d.uid deptuid ,d.deptname deptname
-      from user u left join dept d on u.deptid = d.id
+    select u.* , d.id deptid,d.uid deptuid ,d.deptname deptname
+    from user u left join dept d on u.deptid = d.id
+--     select u.id,u.account,u.password,u.name,u.info,
+--            d.id deptid,d.uid deptuid ,d.deptname deptname
+--       from user u left join dept d on u.deptid = d.id
   </select>
   <resultMap id="UserByList" type="user">
     <id property="id" column="id"></id>
@@ -59,6 +61,8 @@
     <result property="name" column="name"></result>
     <result property="info" column="info"></result>
     <result property="deptid" column="deptid"></result>
+    <result property="createTime" column="createTime"></result>
+    <result property="updateTime" column="updateTime"></result>
     <!--    复杂的属性 用于单独处理  对象association 集合collection-->
     <association property="dep" javaType="Dept">
       <result property="id" column="deptid"></result>

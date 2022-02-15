@@ -1,5 +1,6 @@
 package com.ljy.demo.domain;
 
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -8,50 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @Desc
  * @Application
  **/
+@Data
 public class Dept {
     private Integer id;
     private Integer uid;
     private String deptname;
-
-    public Dept() {
-    }
-
-    @Override
-    public String toString() {
-        return "Dept{" +
-                "id=" + id +
-                ", uid=" + uid +
-                ", deptname='" + deptname + '\'' +
-                '}';
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getUid() {
-        return uid;
-    }
-
-    public void setUid(Integer uid) {
-        this.uid = uid;
-    }
-
-    public String getDeptname() {
-        return deptname;
-    }
-
-    public void setDeptname(String deptname) {
-        this.deptname = deptname;
-    }
-
-    public Dept(Integer id, Integer uid, String deptname) {
-        this.id = id;
-        this.uid = uid;
-        this.deptname = deptname;
-    }
 }

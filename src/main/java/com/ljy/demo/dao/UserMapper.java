@@ -4,10 +4,9 @@ import java.util.List;
 
 import com.ljy.demo.domain.User;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
 
 @Mapper
-public interface UserDao {
+public interface UserMapper {
     /*
      * @Description: 显示所有用户关联职务
      * @Author: LjyLab

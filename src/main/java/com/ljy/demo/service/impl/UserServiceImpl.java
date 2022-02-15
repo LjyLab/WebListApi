@@ -5,42 +5,42 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ljy.demo.dao.UserDao;
+import com.ljy.demo.dao.UserMapper;
 import com.ljy.demo.domain.User;
 import com.ljy.demo.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
-    UserDao userDao;
+    UserMapper userMapper;
 
     @Override
     public List<User> listAll() {
-        return userDao.listAll();
+        return userMapper.listAll();
     }
 
     @Override
     public Integer insert(User user) {
-        return userDao.insert(user);
+        return userMapper.insert(user);
     }
 
     @Override
     public Integer deleteById(Integer id) {
-        return userDao.deleteById(id);
+        return userMapper.deleteById(id);
     }
 
     @Override
     public Integer update(User user) {
-        return userDao.update(user);
+        return userMapper.update(user);
     }
 
     @Override
     public User getById(Integer id) {
-        return userDao.getById(id);
+        return userMapper.getById(id);
     }
 
     @Override
     public List<User> getUserByList() {
-        return userDao.getUserByList();
+        return userMapper.getUserByList();
     }
 }

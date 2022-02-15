@@ -33,6 +33,6 @@
 
 
   <mappers>
-    <mapper class="com.ljy.demo.dao.UserDao"></mapper>
+    <mapper class="com.ljy.demo.dao.UserMapper"></mapper>
   </mappers>
 </configuration>
