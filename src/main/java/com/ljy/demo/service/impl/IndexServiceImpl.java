@@ -4,6 +4,7 @@ import com.ljy.demo.dao.IndexMapper;
 import com.ljy.demo.domain.User;
 import com.ljy.demo.service.IndexService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * @Desc
  * @Application
  **/
+@Service
 public class IndexServiceImpl implements IndexService {
     @Autowired
     IndexMapper indexMapper;

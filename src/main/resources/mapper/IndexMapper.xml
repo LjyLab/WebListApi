@@ -4,8 +4,8 @@
 <mapper namespace="com.ljy.demo.dao.IndexMapper">
 
 
-    <select id="findAllUsers" resultType="com.ljy.demo.domain.User">
-
+    <select id="findAllUsers" resultType="User">
+        select * from user
     </select>
 
 </mapper>
